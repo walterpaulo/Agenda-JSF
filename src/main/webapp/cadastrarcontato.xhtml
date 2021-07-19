@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsp/jstl/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Contato</title>
+</h:head>
+<h:body>
+<h1>Tela de Contato</h1>
+<hr/>
+<h:form acceptcharset="utf-8">
+<h:messages/>
+<h:panelGrid columns="2">
+	<h:outputLabel value="Nome" for="nome"/>
+	<h:inputText id="nome" label="Nome" value="#{contatoBean.contato.nome}" required="true"/>
+	
+	<h:outputLabel value="Telefone" for="telefone"/>
+	<h:inputText id="telefone" label="Telefone" value="#{contatoBean.contato.telefone}" required="true"/>
+	
+	<h:outputLabel value="E-mail" for="email"/>
+	<h:inputText id="email" label="E-mail" value="#{contatoBean.contato.email}" required="true"/>
+	
+	<h:outputLabel value="Observação" for="observacao"/>
+	<h:inputText id="observacao" label="Nome" value="#{contatoBean.contato.observacao}" required="true"/>
+	
+	<h:commandButton action="#{contatoBean.limpaCampos}" value="Limpar Campos"/>
+	<h:commandButton action="#{contatoBean.salvar}" value="Salvar"/>
+</h:panelGrid>
+<hr/>
+<h:commandLink value="Lista de Contatos" action="listadecontato.jsf" immediate="true"></h:commandLink>
+</h:form>
+
+</h:body>
+</html>
